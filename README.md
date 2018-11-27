@@ -1,4 +1,4 @@
-# MultiGrounding
+# Multi-level Multimodal Common Semantic Space for Image-Phrase Grounding
 This is the repo for Multi-level textual grounding.
 
 Codes and more samples will be added soon.
