@@ -1,11 +1,26 @@
 # Multi-level Multimodal Common Semantic Space for Image-Phrase Grounding
-This is the repo for Multi-level textual grounding.
-
-**Full paper for this work can be found** **_[here](https://arxiv.org/pdf/1811.11683)_**.
-
-Codes and more samples will be added soon.
-
-### Samples
-
+Tensorflow implementation for the paper [Multi-level Multimodal Common Semantic Space for Image-Phrase Grounding](http://openaccess.thecvf.com/content_CVPR_2019/papers/Akbari_Multi-Level_Multimodal_Common_Semantic_Space_for_Image-Phrase_Grounding_CVPR_2019_paper.pdf) published in CVPR 2019.
 ![Sample1](http://hassanakbari.com/uploads/papers/CVPR19_Results.jpg)
-(Qualitative and quantitative results)
+
+### Dependencies
+Python 3.6/3.7
+
+Tensorflow 1.14.0
+
+We also use the following packages, which could be installed by `pip install -r requirements.txt`:
+- `tensorpack.dataflow`
+- `tensorflow_hub`
+- `opencv-python`
+
+### ToDo List
+
+- [x] Main Model
+- [x] Parallel Data Pipeline
+- [x] Data Pre-Processing Codes
+- [ ] Main Model Sanity Check
+- [ ] VG Evaluation Code
+- [ ] Flickr30k Evaluation Code
+- [ ] ReferIt Evaluation Code
+- [ ] COCO Evaluation Code
+- [ ] Upload Pre-Processed Data
+- [ ] Upload Pre-Trained Models
