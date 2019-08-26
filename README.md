@@ -2,6 +2,12 @@
 Tensorflow implementation for the paper [Multi-level Multimodal Common Semantic Space for Image-Phrase Grounding](http://openaccess.thecvf.com/content_CVPR_2019/papers/Akbari_Multi-Level_Multimodal_Common_Semantic_Space_for_Image-Phrase_Grounding_CVPR_2019_paper.pdf) published in CVPR 2019.
 ![Sample1](http://hassanakbari.com/uploads/papers/CVPR19_Results.jpg)
 
+### Data Pre-Processing
+You need to first follow the instructions in `./data/readme/` for each dataset and prepare the data. A sample code for creating data process instance can be found in `./data/data-process.ipynb`
+
+### Training
+To train a model, simply run `./code/train.py` specifying the desired parameters.
+
 ### Dependencies
 Python 3.6/3.7
 
@@ -16,11 +22,6 @@ We also use the following packages, which could be installed by `pip install -r 
 
 - [x] Main Model
 - [x] Parallel Data Pipeline
-- [x] Data Pre-Processing Codes
-- [ ] Main Model Sanity Check
-- [ ] VG Evaluation Code
-- [ ] Flickr30k Evaluation Code
-- [ ] ReferIt Evaluation Code
-- [ ] COCO Evaluation Code
-- [ ] Upload Pre-Processed Data
-- [ ] Upload Pre-Trained Models
+- [x] Distributed Training
+- [] Upload Pretrained models
+- [] Final Sanity Check
