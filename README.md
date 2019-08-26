@@ -5,6 +5,10 @@ Tensorflow implementation for the paper [Multi-level Multimodal Common Semantic 
 ### Data Pre-Processing
 You need to first follow the instructions in `./data/readme/` for each dataset and prepare the data. A sample code for creating data process instance can be found in `./data/data-process.ipynb`
 
+## Pre-Trained Models
+Please download pre-trained models from [here](https://www.dropbox.com/s/2tzxkpi86gdd60n/models.tar?dl=0) and unpack them in `./code/models/`.
+Please note that this package also includes visual models (pre-trained on ImageNet) and ELMo model, which are necessary.
+
 ### Training
 To train a model, simply run `./code/train.py` specifying the desired parameters.
 
