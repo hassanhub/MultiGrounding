@@ -27,3 +27,15 @@ We also use the following packages, which could be installed by `pip install -r 
 - [ ] Upload Pre-Processed Data
 - [ ] Final Sanity Check
 
+### Cite
+
+If you found this work/code helpful or used this work in any capacity, please cite:
+```
+@inproceedings{akbari2019multi,
+  title={Multi-level Multimodal Common Semantic Space for Image-Phrase Grounding},
+  author={Akbari, Hassan and Karaman, Svebor and Bhargava, Surabhi and Chen, Brian and Vondrick, Carl and Chang, Shih-Fu},
+  booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
+  pages={12476--12486},
+  year={2019}
+}
+```
