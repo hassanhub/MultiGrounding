@@ -23,5 +23,7 @@ We also use the following packages, which could be installed by `pip install -r 
 - [x] Main Model
 - [x] Parallel Data Pipeline
 - [x] Distributed Training
-- [ ] Upload Pretrained models
+- [ ] Upload Pretrained Models
+- [ ] Upload Pre-Processed Data
 - [ ] Final Sanity Check
+
