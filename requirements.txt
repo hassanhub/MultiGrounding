@@ -1,2 +1,3 @@
 git+https://github.com/tensorpack/dataflow.git
 tensorflow_hub
+opencv-python
