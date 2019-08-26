@@ -1,0 +1,7 @@
+1. clone and build python API of COCO dataset from "https://github.com/cocodataset/cocoapi/tree/master/PythonAPI"
+2. download coco train/val images and annotations from "http://cocodataset.org/#download"
+3. unzip all splits and put all images in one folder named: "COCO_Images"
+4. unzip annotation files and put all files under them in "COCO_Annotations"
+5. call this instance (specifying "version") to process and save data
+Note: we used version 2014 in our evaluations
+Note: using 'gsutil' speeds up the process (instructions available in "http://cocodataset.org/#download")

@@ -1,0 +1,8 @@
+1. download the master branch from "https://github.com/BryanPlummer/flickr30k_entities"
+2. unzip annotations.zip - this should generate "Sentences" and "Annotations"
+3. download flickr30k-images from "http://hockenmaier.cs.illinois.edu/DenotationGraph/"
+4. put all images in "Flickr30k_Images" folder
+5. put "Sentences" and "Annotations" in "Flickr30k_Entities" folder
+6. put "train.txt", "test.txt", and "val.txt" in "Flickr30k_Splits" folder
+7. put folders "Flickr30k_Entities", "Flickr30k_Images", "Flickr30k_Splits" under "./data/flickr30k/"
+8. call this instance with name="flickr30k_entities"

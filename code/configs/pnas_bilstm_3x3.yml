@@ -1,0 +1,8 @@
+conv_type: 3x3
+image_conv_filters: [1024]
+image_model: pnasnet_large
+image_size: !!python/tuple [299, 299, 3]
+sentence_fc_units: [1024, 1024]
+text_model: BiLSTM
+visual_layers: [Cell_5, Cell_7, Cell_9, Cell_11]
+word_fc_units: [1024, 1024]

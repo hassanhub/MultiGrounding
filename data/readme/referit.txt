@@ -1,0 +1,6 @@
+1. download "refclef" split from "http://bvisionweb1.cs.unc.edu/licheng/referit/data/refclef.zip"
+2. download cleaned "refclef" images from "http://bvisionweb1.cs.unc.edu/licheng/referit/data/images/saiapr_tc-12.zip"
+3. unzip files of "refclef.zip" to "ReferIt_Splits"
+4. unzip files of "saiapr_tc-12.zip" to "ReferIt_Images"
+5. unzip files of "RefClef_Captions.tgz" (already included)
+Note: you can choose to download and process RefCOCO splits, but we used RefClef under "UNC" split (an established split in the area) and already included proper "image_id"s in the repo

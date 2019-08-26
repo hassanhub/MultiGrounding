@@ -1,0 +1,8 @@
+conv_type: 3x3
+image_conv_filters: [1024]
+image_model: vgg_16
+image_size: !!python/tuple [299, 299, 3]
+sentence_fc_units: [1024, 1024]
+text_model: ELMo
+visual_layers: [conv4_1, conv4_3, conv5_1, conv5_3]
+word_fc_units: [1024, 1024]

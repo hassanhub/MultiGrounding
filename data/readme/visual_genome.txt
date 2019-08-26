@@ -1,0 +1,9 @@
+1. download v1.2 images and region descriptions from "https://visualgenome.org/api/v0/api_home.html"
+2. put all images under folder: "VG_Images"
+3. put "region_descriptions.json" under folder: "VG_Annotations"
+4. make sure "imgs_data.pickle" (already included) is under "VG_Annotations"
+5. maker sure "data_splits.pickle" (already included) is under "VG_Splits"
+6. 
+Note: for fair comparison with SOTA:
+	1. we make sure train split doesn't have overlap with any test split of other datasets
+	2. we take val set of coco as test split of vg and the rest of vg as train split
