@@ -1,3 +1,5 @@
+tensorflow-gpu==1.14.0
+scikit-image
 git+https://github.com/tensorpack/dataflow.git
 tensorflow_hub
 opencv-python

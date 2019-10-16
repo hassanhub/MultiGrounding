@@ -2,6 +2,7 @@ import xml.etree.cElementTree as etree
 import os, sys, re, pickle, cv2, lmdb, json
 from pycocotools.coco import COCO
 from data.refer import REFER
+#from refer import REFER
 
 class Data():
 	def __init__(self):
@@ -178,11 +179,14 @@ class Data():
 			img_id, height, width, filename = (img_obj['id'], img_obj['height'], img_obj['width'], img_obj['file_name'])
 			
 			if store_lmdb:
-				image = cv2.imread(os.path.join(imgs_path, filename), cv2.IMREAD_COLOR)
-				img_encoded = cv2.imencode('.jpg', image)[1]
-				save_key = str(img_id)
-				with store_lmdb.begin(write=True) as lmdb_txn:
-					lmdb_txn.put(save_key.encode(), img_encoded)
+				try:
+					image = cv2.imread(os.path.join(imgs_path, filename), cv2.IMREAD_COLOR)
+					img_encoded = cv2.imencode('.jpg', image)[1]
+					save_key = str(img_id)
+					with store_lmdb.begin(write=True) as lmdb_txn:
+						lmdb_txn.put(save_key.encode(), img_encoded)
+				except Exception as inst:
+					print("Could not load image {}. {}: {}".format(os.path.join(imgs_path, filename), type(inst), inst))
 			
 			annotations = []
 			bbox_annIds = coco_obj.getAnnIds(imgIds=img_id)
@@ -236,7 +240,13 @@ class Data():
 		for split in ['train','val']: #we only process train and val splits
 			print('Processing '+split+' split...')
 			coco_obj, image_objects, caption_objects, names, supercats = self._get_split_coco(annot_path, split, version)
-			dict_ = self._get_dict_coco(imgs_path, coco_obj, image_objects, caption_objects, names, supercats, store_lmdb)
+			# Images could be in a subfolder of imgs_path...
+			subfolder = [x for x in os.listdir(imgs_path) if split in x and os.path.isdir(os.path.join(imgs_path,x))]
+			tmp_imgs_path = imgs_path
+			if subfolder:
+				print('Using subfolder: '+subfolder[0])
+				tmp_imgs_path = os.path.join(imgs_path, subfolder[0])
+			dict_ = self._get_dict_coco(tmp_imgs_path, coco_obj, image_objects, caption_objects, names, supercats, store_lmdb)
 			pickle.dump(dict_,open(annot_dict_path+split+'.pickle','wb'),protocol=pickle.HIGHEST_PROTOCOL)
 			if split=='train':
 				train_val_dict_ = dict_
