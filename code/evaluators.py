@@ -124,7 +124,7 @@ class gnet_evaluator():
 							cat_att_correct[cat].append(att_c)
 						
 			var = [cnt,self.iter_per_epoch,100.*cnt_correct/cnt_overall,100.*cnt_correct_hit/cnt_overall,100.*att_correct/cnt_overall]
-			prnt = 'Sample {}/{}, IoU:{:.2f}, Pointing Accucary:{:.2f}, Attention Correctness:{:.2f} \r'.format(var[0],var[1],var[2],var[3],var[4])
+			prnt = 'Sample {}/{}, IoU: {:.2f}, Pointing Accuracy: {:.2f}, Attention Correctness: {:.2f} \r'.format(var[0],var[1],var[2],var[3],var[4])
 			sys.stdout.write(prnt)                
 			sys.stdout.flush()
 		

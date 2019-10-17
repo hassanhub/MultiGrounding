@@ -278,12 +278,14 @@ class Data():
 
 			cap_file_name = os.path.join(img_file_name.split("/")[0], str(img_id) + '.eng')
 			cap_file_path = os.path.join(caps_path, cap_file_name)
-			cations = []
+			captions = []
 			if os.path.exists(cap_file_path):
 				with open(cap_file_path, encoding = "ISO-8859-1") as f:
 					lines = f.readlines()
 					captions = lines[3][13:-16].split(';')
 					captions = [c for c in captions if len(c)>2]
+			else:
+				print('Caption file not found: '+cap_file_path)
 
 			if store_lmdb:
 				image = cv2.imread(os.path.join(imgs_path, img_file_name), cv2.IMREAD_COLOR)
@@ -348,7 +350,8 @@ class Data():
 	def _referit(self,raw_path,save_path,store_lmdb):
 		imgs_path = os.path.join(raw_path,'ReferIt_Images/')
 		splits_path = os.path.join(raw_path,'ReferIt_Splits/')
-		caps_path = os.path.join(raw_path, 'RefClef_Captions/')
+#		caps_path = os.path.join(raw_path, 'RefClef_Captions/')
+		caps_path = os.path.join(raw_path, 'ReferClef_Captions/')
 		annot_dict_path = os.path.join(save_path,'annotations/')
 		os.system('mkdir -p '+annot_dict_path)
 		self.wrong = 0
