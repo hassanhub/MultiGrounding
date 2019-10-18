@@ -9,6 +9,7 @@ from utils import *
 import lmdb
 import random
 import pickle
+
 #plans: 2. put validators in a separate class or file
 #plans: 7. take care of build, save, and load stuff of the entire model (including elmo)
 #plans: 8. proper name scopes and attention function (for inference)
@@ -53,7 +54,7 @@ class GroundNet():
 		self.debugging = debugging
 		self.resize_method = tf.image.ResizeMethod.BILINEAR
 		self.end_points = {}
-		self.iamge_size = self.gnet_config['image_size']
+		self.image_size = self.gnet_config['image_size']
 		self.elmo = kwargs.get('elmo')
 
 		#with tf.variable_scope('GroundNet'):
@@ -81,7 +82,7 @@ class GroundNet():
 		with tf.variable_scope('image_block'):
 			pre_processed_img = pre_process(image_input, processing_mode)
 			self.vis_model = pre_trained_load(model_name=self.gnet_config['image_model'], 
-											  image_shape=(None,self.iamge_size[0],self.iamge_size[1],3),
+											  image_shape=(None,self.image_size[0],self.image_size[1],3),
 											  input_tensor=pre_processed_img)
 
 		def _ELMo_aggregate(wrd,lstm1,lstm2):

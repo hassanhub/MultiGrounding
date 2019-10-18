@@ -66,6 +66,7 @@ class gnet_evaluator():
 					 'level_score_word']
 
 		for img,txt,annots in self.gen:
+			#print(cnt, txt, annots)
 			cnt+=1
 			eval_tensors = self.gnet_infer(img,txt,endpoints)
 			qry_heats, qry_scores, sen_score, wrd_idx, sen_idx, lvl_scores = eval_tensors
@@ -79,6 +80,7 @@ class gnet_evaluator():
 					orig_img_shape = annot['image_size'][:2]
 					query = annot['query']
 					idx = annot['idx']
+					#print("We have {} words at positions {} for query `{}` and {} word scores for sentence #{}: `{}`".format(len(wrds), idx, query, qry_scores[c,:].shape, c, sen))
 					if len(query.split())==0 or len(idx)==0:
 						print('query zero')
 					category = list(annot['category'])
@@ -93,7 +95,11 @@ class gnet_evaluator():
 						if cat not in cat_cnt_overall:
 							cat_cnt_overall[cat] = 0
 						cat_cnt_overall[cat]+=1    
-					
+					try:
+						tmp = qry_scores[c,idx]
+					except:
+						print("Are you running the evaluation on Flickr30K without query_level='sentence'?")
+						print(c, idx, query)
 					if np.mean(qry_scores[c,idx])==0:
 						pred = {}
 					else:
