@@ -15,6 +15,11 @@ Please first download and extract the data from the following links:
 
 [Part 5 - 2.99 GB](https://hassanakbari.com/uploads/projects/multigrounding19/data/grounding_data.tar.gz.part_04)
 
+## Download dependencies
+The model depends on pre-trained models e.g. ELMo, VGG, and PNASNet. Please download these models from the following link and unpack them under `modules` folder.
+
+[Modules - 6.3 GB](https://hassanakbari.com/uploads/projects/multigrounding19/data/modules.tar.gz)
+
 ## Training
 To train a model, open and run all cells in each of the notebook files depending on the desired model.
 
