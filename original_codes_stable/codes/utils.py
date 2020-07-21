@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 from scipy import ndimage as ndi
 import tensorflow.contrib.slim as slim
 import sys
-slim_models_path = './modules/'
+slim_models_path = '../modules/'
 sys.path.append(slim_models_path)
 
 #bbox generation config
